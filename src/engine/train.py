@@ -93,7 +93,7 @@ def train(cfg):
             metric_logger.update(batch_time=batch_time)
             metric_logger.update(loss=loss.item())
         
-            if (global_step) % cfg.train.print_every == 0:
+            if global_step % cfg.train.print_every == 0:
                 start = time.perf_counter()
                 log.update({
                     'loss': metric_logger['loss'].median,
